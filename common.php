@@ -125,6 +125,7 @@ function vlog() {
 
     $username = "";
     $backtrace = debug_backtrace();
+    $method = "";
     if (count($backtrace) > 1) {
         $method = sprintf("%s\t%s::%s\t%s:%s", strftime("%Y-%m-%d %H:%M:%S"), isset($backtrace[1]['class']) ? $backtrace[1]['class'] : '', isset($backtrace[1]['function']) ? $backtrace[1]['function'] : '' , basename($backtrace[0]['file']), $backtrace[0]['line']); 
     }
