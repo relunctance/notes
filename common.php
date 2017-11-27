@@ -235,6 +235,12 @@ function data_trun_key($data , $field , $primary = false)
     return $return;
 }
 
-
+function getServerIp(){
+        if(isset($_SERVER['SERVER_ADDR'])) return $_SERVER['SERVER_ADDR'];
+        if(isset($_SERVER['HTTP_HOST'])) {
+            return substr($_SERVER['HTTP_HOST'] ,0 ,strpos($_SERVER['HTTP_HOST'] , ":"));
+        }
+        return gethostbyname(php_uname('n'));   //性能较差
+}
 
 
